@@ -1,0 +1,20 @@
+Type CNF:
+<div>
+  <input type="text" id="fname"  [(ngModel)] ="cnf" [ngModelOptions]="{standalone: true}">
+
+</div>
+
+<div>
+  <button  (click)="transform()">Generate transformation</button>
+
+</div>
+Tseitin formula:
+<div>
+{{ this.response.tseitinFormula}}
+</div>
+<br>
+<div id="mynetwork"></div>
+Dimacs:
+<div>
+  {{response.dimacs}}
+</div>
