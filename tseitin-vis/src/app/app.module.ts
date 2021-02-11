@@ -5,11 +5,13 @@ import { AppComponent } from './app.component';
 import { MainComponent } from './main/main.component';
 import {FormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
+import { DimacsPipe } from './dimacs.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
-    MainComponent
+    MainComponent,
+    DimacsPipe
   ],
   imports: [
     BrowserModule,

@@ -12,6 +12,7 @@ export class MainComponent implements OnInit {
   cnf = '(a || b) && c || !(d && e)';
   response: TransformationResponse;
   tseitinFormula = '';
+  tseitinVariables = new Set<number>();
 
   constructor(public service: TransformationService) {
   }
@@ -111,8 +112,11 @@ export class MainComponent implements OnInit {
     console.log('clause to express');
     console.log(clauseToExpress);
     const [tseitinNodesIds, primaryVariables] = this.getTseitinVariables(this.response.tseitinFormula, clauseToExpress, terms);
-    console.log("prim")
+    console.log("prim");
     console.log(primaryVariables);
+
+    this.tseitinVariables = tseitinNodesIds;
+
     // for (let varOcc in variableOccurenceEdges){
     //   if(Math.abs(varOcc['from'])){
     //
@@ -174,6 +178,4 @@ export class MainComponent implements OnInit {
     };
     const network = new Network(container, data, options);
   }
-
-
 }
